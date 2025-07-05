@@ -1,0 +1,191 @@
+[gd_scene load_steps=17 format=3 uid="uid://hsr7sgpxqjr2"]
+
+[ext_resource type="Texture2D" uid="uid://ir7oci8isrfl" path="res://assets/number-2.png" id="1_cmjtl"]
+[ext_resource type="Script" uid="uid://bw7ilskiqpxo6" path="res://draggable_button.gd" id="2_m1wuf"]
+[ext_resource type="Texture2D" uid="uid://rbr38waq7hoe" path="res://assets/cancel-removebg-preview.png" id="3_dvyuu"]
+[ext_resource type="Script" uid="uid://b4vlpg6krscob" path="res://del_button.gd" id="4_26n8o"]
+[ext_resource type="Script" uid="uid://bg080v1n5vwf4" path="res://panel.gd" id="5_26n8o"]
+[ext_resource type="Texture2D" uid="uid://bd4ppg15vow44" path="res://assets/تصميم بدون عنوان.png" id="6_7o7tq"]
+[ext_resource type="Script" uid="uid://c0j2u4v15wg2q" path="res://edit_button.gd" id="6_8sikd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ead1n"]
+bg_color = Color(1, 1, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o0eqs"]
+bg_color = Color(0.247059, 0.701961, 0.027451, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6iot"]
+bg_color = Color(0, 0.501961, 0.501961, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qwwm6"]
+bg_color = Color(0, 0.501961, 0.501961, 1)
+border_color = Color(0, 0.501961, 0.501961, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_26n8o"]
+bg_color = Color(0.94902, 0.937255, 0.12549, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.0142752, 0.0142752, 0.0142752, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8sikd"]
+bg_color = Color(0.94902, 0.937255, 0.12549, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.00820203, 0.00820202, 0.00820201, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7o7tq"]
+bg_color = Color(0.94902, 0.937255, 0.12549, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.0233718, 0.0233718, 0.0233718, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8a7hk"]
+bg_color = Color(0.698039, 0.596078, 0.129412, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_84hfo"]
+bg_color = Color(0.69624, 0.595857, 0.129145, 1)
+
+[node name="DraggableButton" type="TextureButton"]
+modulate = Color(0.775063, 0.775063, 0.775063, 1)
+z_index = 10
+custom_minimum_size = Vector2(10, 10)
+offset_left = 102.0
+offset_top = 97.0
+offset_right = 614.0
+offset_bottom = 609.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("1_cmjtl")
+script = ExtResource("2_m1wuf")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 2050.0
+offset_top = -125.0
+offset_right = 3115.0
+offset_bottom = 860.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ead1n")
+script = ExtResource("5_26n8o")
+
+[node name="TextEdit" type="TextEdit" parent="Panel"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 35.0
+offset_right = 1035.0
+offset_bottom = 535.0
+theme_override_font_sizes/font_size = 70
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 645.0
+offset_right = 870.0
+offset_bottom = 880.0
+theme_override_colors/font_hover_color = Color(2.22605e-07, 0.223983, 2.88785e-07, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 85
+theme_override_styles/focus = SubResource("StyleBoxFlat_o0eqs")
+theme_override_styles/hover = SubResource("StyleBoxFlat_i6iot")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qwwm6")
+text = "Confirm"
+
+[node name="DeleteButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 340.0
+offset_top = 365.0
+offset_right = 840.0
+offset_bottom = 865.0
+scale = Vector2(0.3, 0.3)
+texture_normal = ExtResource("3_dvyuu")
+script = ExtResource("4_26n8o")
+
+[node name="ImageFileDialog" type="FileDialog" parent="."]
+
+[node name="EditButton" type="Button" parent="."]
+layout_mode = 2
+offset_left = 745.0
+offset_top = 455.0
+offset_right = 1335.0
+offset_bottom = 612.0
+theme_override_colors/font_hover_color = Color(0.99779, 0.99779, 0.99779, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = SubResource("StyleBoxFlat_26n8o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_8sikd")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7o7tq")
+text = "Edit"
+script = ExtResource("6_8sikd")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="EditButton"]
+layout_mode = 0
+offset_left = 55.0
+offset_top = 335.0
+offset_right = 645.0
+offset_bottom = 655.0
+
+[node name="Sprite2D" type="Sprite2D" parent="EditButton/ScrollContainer"]
+position = Vector2(327.5, 277.5)
+scale = Vector2(1.29, 0.605)
+texture = ExtResource("6_7o7tq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="EditButton/ScrollContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="EditButton/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "delete"
+
+[node name="Button2" type="Button" parent="EditButton/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "edit text
+"
+
+[node name="Button3" type="Button" parent="EditButton/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "edit styling"
+
+[node name="Button4" type="Button" parent="EditButton/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "upload image"
+
+[node name="Label" type="Label" parent="EditButton/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "type"
+horizontal_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="EditButton/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+theme_override_styles/focus = SubResource("StyleBoxFlat_8a7hk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_84hfo")
+
+[node name="Thumbnail" type="Sprite2D" parent="."]
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]

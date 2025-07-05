@@ -1,0 +1,169 @@
+[gd_scene load_steps=24 format=3 uid="uid://cch3x61ukbok0"]
+
+[ext_resource type="PackedScene" uid="uid://hsr7sgpxqjr2" path="res://draggable_button.tscn" id="1_1u4ba"]
+[ext_resource type="Script" uid="uid://q518l5av4f2s" path="res://main.gd" id="1_4dn7r"]
+[ext_resource type="Texture2D" uid="uid://4htvrn1i1fkh" path="res://assets/2تصميم بدون عنوان.png" id="1_34rh7"]
+[ext_resource type="Texture2D" uid="uid://byu0ijafm2vcc" path="res://assets/h1.png" id="3_1f6f1"]
+[ext_resource type="Texture2D" uid="uid://dmlt0vju43vy0" path="res://assets/h2-removebg-preview.png" id="4_hfmrg"]
+[ext_resource type="Texture2D" uid="uid://d3s7q4bwfqwwc" path="res://assets/h3-removebg-preview.png" id="5_k6263"]
+[ext_resource type="Texture2D" uid="uid://vbid57mhlmxe" path="res://assets/h4-removebg-preview.png" id="6_m6blx"]
+[ext_resource type="Texture2D" uid="uid://ctbb2ruh8y7sf" path="res://assets/a-removebg-preview.png" id="7_1yemu"]
+[ext_resource type="Texture2D" uid="uid://b0yq30e1ti6pl" path="res://assets/p-removebg-preview.png" id="8_qxe3m"]
+[ext_resource type="Texture2D" uid="uid://bggf7jlqevj7a" path="res://assets/span-removebg-preview.png" id="9_1nfb0"]
+[ext_resource type="Texture2D" uid="uid://d1qyc2r237txq" path="res://assets/strong-removebg-preview.png" id="10_awbya"]
+[ext_resource type="Texture2D" uid="uid://csushorxh1jla" path="res://assets/txtarea-removebg-preview.png" id="11_e01ul"]
+[ext_resource type="Texture2D" uid="uid://bh7txd40dd0wb" path="res://assets/button-removebg-preview.png" id="12_0g8d2"]
+[ext_resource type="Texture2D" uid="uid://bgifr48g6du7j" path="res://assets/img-removebg-preview.png" id="13_8sxpm"]
+[ext_resource type="Texture2D" uid="uid://ijlqvi6ph6yd" path="res://assets/input-removebg-preview.png" id="14_yd2ge"]
+[ext_resource type="Texture2D" uid="uid://bd4ppg15vow44" path="res://assets/تصميم بدون عنوان.png" id="15_n1scv"]
+[ext_resource type="Texture2D" uid="uid://cts3xsg6e61nx" path="res://assets/workarea.png" id="17_5kxpg"]
+[ext_resource type="Texture2D" uid="uid://n7jchhym3qq7" path="res://assets/pngegg (20).png" id="17_g3n2s"]
+[ext_resource type="Texture2D" uid="uid://bbhvgan2rgna5" path="res://assets/output-onlinepngtools.png" id="18_g1jf2"]
+[ext_resource type="Texture2D" uid="uid://jmvecjm1fhw7" path="res://assets/pngegg (22).png" id="19_45wjw"]
+[ext_resource type="Texture2D" uid="uid://r82ajrv2fhs6" path="res://assets/view__1_-removebg-preview.png" id="20_46o5l"]
+
+[sub_resource type="GDScript" id="GDScript_be4w2"]
+script/source = "extends ScrollContainer
+
+@export var draggable_block_scene: PackedScene  # Set this to your block scene with delete button
+
+func _ready() -> void:
+	connect(\"button_down\", Callable(self, \"_create_draggable_copy\"))
+
+func _create_draggable_copy() -> void:
+	var new_block = draggable_block_scene.instantiate()
+	get_node(\"../..\").find_child(\"workarea\").add_child(new_block)
+	new_block.global_position = get_global_mouse_position()
+"
+
+[sub_resource type="GDScript" id="GDScript_5hvas"]
+
+[node name="main" type="Area2D"]
+script = ExtResource("1_4dn7r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Rm222Batch2-mind-03" type="Sprite2D" parent="Sprite2D"]
+z_index = -10
+position = Vector2(638, 369.5)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_34rh7")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_top = -4.0
+offset_right = 200.0
+offset_bottom = 646.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control"]
+custom_minimum_size = Vector2(200.21, 200)
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.04
+anchor_bottom = 0.04
+offset_left = 1.0
+offset_top = -21.0
+offset_right = 566.0
+offset_bottom = 3574.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+follow_focus = true
+vertical_scroll_mode = 2
+script = SubResource("GDScript_be4w2")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/ScrollContainer"]
+custom_minimum_size = Vector2(1, 1)
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="DraggableButton" parent="Control/ScrollContainer/VBoxContainer" instance=ExtResource("1_1u4ba")]
+custom_minimum_size = Vector2(10, 40)
+layout_mode = 2
+texture_normal = ExtResource("3_1f6f1")
+
+[node name="DraggableButton2" parent="Control/ScrollContainer/VBoxContainer" instance=ExtResource("1_1u4ba")]
+layout_mode = 2
+texture_normal = ExtResource("4_hfmrg")
+
+[node name="DraggableButton3" parent="Control/ScrollContainer/VBoxContainer" instance=ExtResource("1_1u4ba")]
+layout_mode = 2
+texture_normal = ExtResource("5_k6263")
+
+[node name="DraggableButton4" parent="Control/ScrollContainer/VBoxContainer" instance=ExtResource("1_1u4ba")]
+layout_mode = 2
+texture_normal = ExtResource("6_m6blx")
+
+[node name="DraggableButton5" parent="Control/ScrollContainer/VBoxContainer" instance=ExtResource("1_1u4ba")]
+layout_mode = 2
+texture_normal = ExtResource("7_1yemu")
+
+[node name="DraggableButton6" parent="Control/ScrollContainer/VBoxContainer" instance=ExtResource("1_1u4ba")]
+layout_mode = 2
+texture_normal = ExtResource("8_qxe3m")
+
+[node name="DraggableButton7" parent="Control/ScrollContainer/VBoxContainer" instance=ExtResource("1_1u4ba")]
+custom_minimum_size = Vector2(10, 40)
+layout_mode = 2
+texture_normal = ExtResource("9_1nfb0")
+
+[node name="DraggableButton8" parent="Control/ScrollContainer/VBoxContainer" instance=ExtResource("1_1u4ba")]
+layout_mode = 2
+texture_normal = ExtResource("10_awbya")
+
+[node name="DraggableButton9" parent="Control/ScrollContainer/VBoxContainer" instance=ExtResource("1_1u4ba")]
+layout_mode = 2
+texture_normal = ExtResource("11_e01ul")
+
+[node name="DraggableButton10" parent="Control/ScrollContainer/VBoxContainer" instance=ExtResource("1_1u4ba")]
+layout_mode = 2
+texture_normal = ExtResource("12_0g8d2")
+
+[node name="DraggableButton11" parent="Control/ScrollContainer/VBoxContainer" instance=ExtResource("1_1u4ba")]
+layout_mode = 2
+texture_normal = ExtResource("13_8sxpm")
+
+[node name="DraggableButton12" parent="Control/ScrollContainer/VBoxContainer" instance=ExtResource("1_1u4ba")]
+layout_mode = 2
+texture_normal = ExtResource("14_yd2ge")
+
+[node name="Sprite2D" type="Sprite2D" parent="Control/ScrollContainer"]
+position = Vector2(230.532, 1807.5)
+scale = Vector2(1.77787, 4.065)
+texture = ExtResource("15_n1scv")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HiddenScreen" type="Sprite2D" parent="."]
+z_index = -20
+position = Vector2(621.9, 389.5)
+scale = Vector2(0.719785, 0.808811)
+texture = ExtResource("17_g3n2s")
+
+[node name="BringToFrontButton" type="TextureButton" parent="."]
+offset_left = 960.0
+offset_top = -4.0
+offset_right = 1984.0
+offset_bottom = 1020.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("18_g1jf2")
+texture_hover = ExtResource("19_45wjw")
+
+[node name="workarea" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+position = Vector2(600, 360)
+scale = Vector2(1.13529, 1.21891)
+texture = ExtResource("17_5kxpg")
+script = SubResource("GDScript_5hvas")
+
+[node name="SendToBackButton" type="TextureButton" parent="."]
+z_index = -19
+offset_left = 5.0
+offset_top = 680.0
+offset_right = 517.0
+offset_bottom = 1192.0
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("20_46o5l")

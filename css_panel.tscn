@@ -1,0 +1,543 @@
+[gd_scene load_steps=9 format=3 uid="uid://bcbh5fco82dqn"]
+
+[ext_resource type="Script" uid="uid://d1bory0rm2gfs" path="res://css_panel.gd" id="1_tgkk6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tgkk6"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_riuam"]
+bg_color = Color(0.941176, 0.807843, 0.180392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hmgpx"]
+bg_color = Color(0.941176, 0.807843, 0.180392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4kcc7"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.905473, 0.801224, 0.273243, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_73ich"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9225, 0.79041, 0.34161, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_awjvl"]
+bg_color = Color(0.941176, 0.807843, 0.180392, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ohtvv"]
+bg_color = Color(0.941176, 0.807843, 0.180392, 1)
+
+[node name="CSSPanel" type="Panel"]
+offset_left = 17.0
+offset_top = 5.0
+offset_right = 431.0
+offset_bottom = 534.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_tgkk6")
+script = ExtResource("1_tgkk6")
+
+[node name="bk_lb" type="Label" parent="."]
+layout_mode = 2
+offset_left = 272.0
+offset_top = 12.0
+offset_right = 412.0
+offset_bottom = 35.0
+theme_override_colors/font_color = Color(0.941176, 0.807843, 0.180392, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "Back ground color"
+horizontal_alignment = 1
+
+[node name="color_lb" type="Label" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 12.0
+offset_right = 116.0
+offset_bottom = 35.0
+theme_override_colors/font_color = Color(0.939419, 0.806586, 0.179604, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "Color"
+horizontal_alignment = 1
+
+[node name="width" type="SpinBox" parent="."]
+layout_mode = 2
+offset_left = 310.0
+offset_top = 121.0
+offset_right = 407.0
+offset_bottom = 152.0
+theme_override_colors/up_hover_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/up_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/up_pressed_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/up_disabled_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_hover_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_pressed_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_disabled_icon_modulate = Color(0, 0, 0, 1)
+
+[node name="Color" type="ColorPickerButton" parent="."]
+layout_mode = 2
+offset_left = 9.0
+offset_top = 42.0
+offset_right = 108.0
+offset_bottom = 95.0
+
+[node name="bk_Color" type="ColorPickerButton" parent="."]
+layout_mode = 2
+offset_left = 305.0
+offset_top = 42.0
+offset_right = 404.0
+offset_bottom = 95.0
+
+[node name="height_lb" type="Label" parent="."]
+layout_mode = 2
+offset_left = -6.0
+offset_top = 92.0
+offset_right = 103.0
+offset_bottom = 115.0
+theme_override_colors/font_color = Color(0.941176, 0.807843, 0.180392, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "height"
+horizontal_alignment = 1
+
+[node name="textalgin_lb" type="Label" parent="."]
+layout_mode = 2
+offset_left = 283.0
+offset_top = 151.0
+offset_right = 411.0
+offset_bottom = 174.0
+theme_override_colors/font_color = Color(0.941176, 0.807843, 0.180392, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "text algin"
+horizontal_alignment = 1
+
+[node name="TextAlginOptionButton" type="OptionButton" parent="."]
+layout_mode = 2
+offset_left = 290.0
+offset_top = 182.0
+offset_right = 410.0
+offset_bottom = 213.0
+theme_override_styles/focus = SubResource("StyleBoxFlat_riuam")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hmgpx")
+item_count = 3
+popup/item_0/text = "left"
+popup/item_0/id = 0
+popup/item_1/text = "right"
+popup/item_1/id = 1
+popup/item_2/text = "center"
+popup/item_2/id = 2
+
+[node name="FontSpin" type="SpinBox" parent="."]
+layout_mode = 2
+offset_left = 4.0
+offset_top = 184.0
+offset_right = 117.0
+offset_bottom = 215.0
+theme_override_colors/up_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/up_pressed_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_hover_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_pressed_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_disabled_icon_modulate = Color(0, 0, 0, 1)
+
+[node name="width_lb" type="Label" parent="."]
+layout_mode = 2
+offset_left = 285.0
+offset_top = 93.0
+offset_right = 411.0
+offset_bottom = 116.0
+theme_override_colors/font_color = Color(0.941176, 0.807843, 0.180392, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "width"
+horizontal_alignment = 1
+
+[node name="HeightSpin" type="SpinBox" parent="."]
+layout_mode = 2
+offset_left = 9.0
+offset_top = 118.0
+offset_right = 101.0
+offset_bottom = 149.0
+theme_override_colors/up_hover_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/up_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/up_pressed_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/up_disabled_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_hover_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_pressed_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_disabled_icon_modulate = Color(0, 0, 0, 1)
+
+[node name="Font_lb" type="Label" parent="."]
+layout_mode = 2
+offset_left = -32.0
+offset_top = 147.0
+offset_right = 110.0
+offset_bottom = 170.0
+theme_override_colors/font_color = Color(0.941176, 0.807843, 0.180392, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "Font size"
+horizontal_alignment = 1
+
+[node name="padding_lb" type="Label" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 215.0
+offset_right = 415.0
+offset_bottom = 242.0
+theme_override_colors/font_color = Color(0.941176, 0.807843, 0.180392, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.941176, 0.807843, 0.180392, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_4kcc7")
+text = "padding"
+horizontal_alignment = 1
+
+[node name="padTop_lb" type="Label" parent="."]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 234.0
+offset_right = 61.0
+offset_bottom = 257.0
+theme_override_colors/font_color = Color(0.941176, 0.807843, 0.180392, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = " top"
+horizontal_alignment = 1
+
+[node name="padRight_lb" type="Label" parent="."]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 234.0
+offset_right = 206.0
+offset_bottom = 257.0
+theme_override_colors/font_color = Color(0.941176, 0.807843, 0.180392, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "right"
+horizontal_alignment = 1
+
+[node name="paddingTopSpin" type="SpinBox" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 259.0
+offset_right = 97.5625
+offset_bottom = 290.0
+theme_override_colors/up_hover_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/up_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/up_pressed_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/up_disabled_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_hover_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_pressed_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_disabled_icon_modulate = Color(0, 0, 0, 1)
+
+[node name="paddingRightSpin" type="SpinBox" parent="."]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 259.0
+offset_right = 216.563
+offset_bottom = 290.0
+theme_override_colors/up_hover_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/up_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/up_pressed_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/up_disabled_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_hover_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_pressed_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_disabled_icon_modulate = Color(0, 0, 0, 1)
+
+[node name="padLeft" type="Label" parent="."]
+layout_mode = 0
+offset_left = 229.0
+offset_top = 234.0
+offset_right = 310.0
+offset_bottom = 257.0
+theme_override_colors/font_color = Color(0.941176, 0.807843, 0.180392, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "left:"
+horizontal_alignment = 1
+
+[node name="paddingLeftSpin" type="SpinBox" parent="."]
+layout_mode = 0
+offset_left = 323.0
+offset_top = 262.0
+offset_right = 409.563
+offset_bottom = 293.0
+theme_override_colors/up_hover_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/up_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/up_pressed_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/up_disabled_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_hover_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_pressed_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_disabled_icon_modulate = Color(0, 0, 0, 1)
+
+[node name="padButtom_lb" type="Label" parent="."]
+layout_mode = 0
+offset_left = 335.0
+offset_top = 234.0
+offset_right = 407.0
+offset_bottom = 257.0
+theme_override_colors/font_color = Color(0.941176, 0.807843, 0.180392, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "buttom"
+
+[node name="paddingButtomSpin" type="SpinBox" parent="."]
+layout_mode = 0
+offset_left = 234.0
+offset_top = 262.0
+offset_right = 321.0
+offset_bottom = 293.0
+theme_override_colors/up_hover_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/up_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/up_pressed_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/up_disabled_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_hover_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_pressed_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_disabled_icon_modulate = Color(0, 0, 0, 1)
+
+[node name="margin_lb" type="Label" parent="."]
+layout_mode = 0
+offset_left = -26.0
+offset_top = 294.0
+offset_right = 402.0
+offset_bottom = 317.0
+theme_override_colors/font_color = Color(0.941176, 0.807843, 0.180392, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "mergin"
+horizontal_alignment = 1
+
+[node name="margTop_lb" type="Label" parent="."]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 304.0
+offset_right = 103.0
+offset_bottom = 327.0
+theme_override_colors/font_color = Color(0.941176, 0.807843, 0.180392, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = " top"
+horizontal_alignment = 1
+
+[node name="margRight_lb" type="Label" parent="."]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 311.0
+offset_right = 207.0
+offset_bottom = 334.0
+theme_override_colors/font_color = Color(0.941176, 0.807843, 0.180392, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "right"
+horizontal_alignment = 1
+
+[node name="margLeft_lb" type="Label" parent="."]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 314.0
+offset_right = 301.0
+offset_bottom = 337.0
+theme_override_colors/font_color = Color(0.941176, 0.807843, 0.180392, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "left"
+horizontal_alignment = 1
+
+[node name="margDown_lb" type="Label" parent="."]
+layout_mode = 0
+offset_left = 327.0
+offset_top = 317.0
+offset_right = 386.0
+offset_bottom = 340.0
+theme_override_colors/font_color = Color(0.941176, 0.807843, 0.180392, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "Buttom"
+horizontal_alignment = 1
+
+[node name="marginTopSpin" type="SpinBox" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 336.0
+offset_right = 97.563
+offset_bottom = 367.0
+theme_override_colors/up_hover_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/up_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/up_pressed_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/up_disabled_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_hover_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_pressed_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_disabled_icon_modulate = Color(0, 0, 0, 1)
+
+[node name="marginRightSpin" type="SpinBox" parent="."]
+layout_mode = 0
+offset_left = 123.0
+offset_top = 341.0
+offset_right = 209.563
+offset_bottom = 372.0
+theme_override_colors/up_hover_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/up_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/up_pressed_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/up_disabled_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_hover_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_pressed_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_disabled_icon_modulate = Color(0, 0, 0, 1)
+
+[node name="marginLeftSpin" type="SpinBox" parent="."]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 344.0
+offset_right = 307.0
+offset_bottom = 375.0
+theme_override_colors/up_hover_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/up_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/up_pressed_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/up_disabled_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_hover_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_pressed_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_disabled_icon_modulate = Color(0, 0, 0, 1)
+
+[node name="marginButtonSpin" type="SpinBox" parent="."]
+layout_mode = 0
+offset_left = 322.0
+offset_top = 347.0
+offset_right = 409.0
+offset_bottom = 378.0
+theme_override_colors/up_hover_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/up_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/up_pressed_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/up_disabled_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_hover_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_pressed_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_disabled_icon_modulate = Color(0, 0, 0, 1)
+
+[node name="border_lb" type="Label" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 378.0
+offset_right = 413.0
+offset_bottom = 406.0
+theme_override_colors/font_color = Color(0.941176, 0.807843, 0.180392, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_73ich")
+text = "border"
+horizontal_alignment = 1
+
+[node name="BorderWidthSpin" type="SpinBox" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 432.0
+offset_right = 96.563
+offset_bottom = 463.0
+theme_override_colors/up_hover_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/up_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/up_pressed_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/up_disabled_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_hover_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_pressed_icon_modulate = Color(0, 0, 0, 1)
+theme_override_colors/down_disabled_icon_modulate = Color(0, 0, 0, 1)
+
+[node name="BorderWidth_lb" type="Label" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 401.0
+offset_right = 73.0
+offset_bottom = 424.0
+theme_override_colors/font_color = Color(0.941176, 0.807843, 0.180392, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "width"
+horizontal_alignment = 1
+
+[node name="BorderStyle_lb" type="Label" parent="."]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 402.0
+offset_right = 235.0
+offset_bottom = 425.0
+theme_override_colors/font_color = Color(0.941176, 0.807843, 0.180392, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "Style"
+horizontal_alignment = 1
+
+[node name="BorderStyleOptionButton" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 435.0
+offset_right = 255.0
+offset_bottom = 466.0
+item_count = 7
+popup/item_0/text = "doted"
+popup/item_0/id = 0
+popup/item_1/text = "dashed"
+popup/item_1/id = 1
+popup/item_2/text = "double"
+popup/item_2/id = 2
+popup/item_3/text = "inset"
+popup/item_3/id = 3
+popup/item_4/text = "groove"
+popup/item_4/id = 4
+popup/item_5/text = "solid"
+popup/item_5/id = 5
+popup/item_6/text = "outset"
+popup/item_6/id = 6
+
+[node name="BorderColor" type="ColorPickerButton" parent="."]
+layout_mode = 0
+offset_left = 330.0
+offset_top = 428.0
+offset_right = 394.0
+offset_bottom = 469.0
+
+[node name="BorderColor_lb" type="Label" parent="."]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 397.0
+offset_right = 390.0
+offset_bottom = 420.0
+theme_override_colors/font_color = Color(0.941176, 0.807843, 0.180392, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "Color"
+horizontal_alignment = 1
+
+[node name="ok_btn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 491.0
+offset_right = 369.0
+offset_bottom = 522.0
+theme_override_colors/font_hover_pressed_color = Color(0, 0.945098, 0, 1)
+theme_override_colors/font_hover_color = Color(0.172549, 0.509804, 0.211765, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_awjvl")
+text = "ok"
+
+[node name="close_btn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 485.0
+offset_right = 156.0
+offset_bottom = 516.0
+theme_override_colors/font_hover_pressed_color = Color(0.929412, 0.129412, 0.101961, 1)
+theme_override_colors/font_hover_color = Color(0.0823529, 0.490196, 0.247059, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_ohtvv")
+text = "close"
