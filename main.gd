@@ -59,10 +59,7 @@ func _on_button_deleted(button_id: String):
 func _on_bring_to_front_button_pressed() -> void:
 	save_ui_config()
 	generate_html()
-	if OS.has_feature("HTML5"):
-		OS.shell_open("https://fatmaalzhraa77.github.io/webcraft_trail/web_output/webcraft_output.html")
-	else:
-		OS.shell_open(ProjectSettings.globalize_path(WEB_OUTPUT_DIR +"/webcraft_output.html"))
+	OS.shell_open(ProjectSettings.globalize_path(WEB_OUTPUT_DIR +"/webcraft_output.html"))
 
 func save_html_file(html_text: String, file_name: String = "webcraft_output.html"):
 	var dir = DirAccess.open("res://")
@@ -71,9 +68,10 @@ func save_html_file(html_text: String, file_name: String = "webcraft_output.html
 	if file:
 		file.store_string(html_text)
 		file.close()
-		print("HTML file saved as", file_name)
+		#print("HTML file saved as", file_name)
 	else:
-		print("Failed to save HTML file.")
+		pass
+		#print("Failed to save HTML file.")
 func _on_code_added(button_name: String, html_code: String) -> void:
 	html_snippets[button_name] = html_code
 	
@@ -148,10 +146,8 @@ func generate_html():
 		"styles": css_rules,
 		"content": html_content
 	})
-	if OS.has_feature("HTML5"):
-		show_html_output(final_html)
-	else:
-		save_html_file(final_html)
+	show_html_output(final_html)
+	save_html_file(final_html)
 func load_ui_config():
 	var load_path = "user://projects/%s.json" % Global.current_project
 	if FileAccess.file_exists(load_path):
@@ -243,10 +239,11 @@ func update_button_type(button_name:String,new_type:String)->void:
 	print(html_snippets[button_name])
 	generate_html()
 func show_html_output(html_content: String):
-	# Open in new tab for web version
+	var escaped_html = JSON.stringify(html_content)  # Escapes quotes, newlines, etc.
 	JavaScriptBridge.eval("""
+		var html = %s;
 		var newWindow = window.open();
 		newWindow.document.open();
-		newWindow.document.write(`%s`);
+		newWindow.document.write(html);
 		newWindow.document.close();
-	""" % html_content.replace("`", "\\`"))
+	""" % escaped_html)
